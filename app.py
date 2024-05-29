@@ -59,6 +59,9 @@ def gift_randomizer(gift_options):
     return random.choice(gift_options)
 
 
+def remove_time(type, amount):
+       
+
 ### Farming:
 
 ### First you plant the seed of the plant
@@ -87,7 +90,27 @@ def plant_seed(type):
 ### Next you water the seed
 
 def water_seed(type):
-    pass
+    if type == 'strawberry':
+        print(f'Planting {type}...')
+        print('Cost is 1 stamina.')
+        global stamina 
+        stamina -= 1
+    elif type == 'wheat':
+        print(f'Planting {type}...')
+        print('Cost is 1 stamina.')
+        stamina -= 1
+    elif type == 'corn':
+        print(f'Planting {type}...')
+        print('Cost is 1 stamina.')
+        stamina -= 1
+    elif type == 'rice':
+        print(f'Planting {type}...')
+        print('Cost is 1 stamina.')
+        stamina -= 1
+    else:
+        print('Error processing plant_seed')
+    
+    remove_time(type, amount)
 
 ### Next feed your seed
 
