@@ -1,18 +1,16 @@
 import random
 
-
-## Define Character Stats
+### Define Character Stats
 character_level = None
 experience_points = None
 
-
-# talents
+## Talents
 
 hp = 100
 strength = 100
 stamina = 100
 
-## Skills
+### Skills
 
 woodworking = 0
 farming = 0
@@ -20,40 +18,40 @@ cooking = 0
 mining = 0
 firstaid = 0
 
-## Tracking from last session
+### Tracking from last session
 
 current_day = None
 current_xp = 0
 
-## Track whats in your pockets
+### Track whats in your pockets
 
 front_pockets = []
 back_pockets = []
 
-## Track whats in your backpack
+### Track whats in your backpack
 
 backpack_small = []
 backpack_medium = []
 backpack_large = []
 
-## Track what in your bank
+### Track what in your bank
 
 bank_checking = 0
 bank_savings = 0
 bank_level = 0
 bank_items = []
 
-## Track what in your hands
+### Track what in your hands
 left_hand = None
 right_hand = None
 
-## Miscellaneous Configs
+### Miscellaneous Configs
 
 gift_options = ['Car(200)', 'Taco(10)', 'Double(x2)']
 
 
 
-## Miscellaneous Functions
+### Miscellaneous Functions
 
 def gift_randomizer(gift_options):
     return random.choice(gift_options)
