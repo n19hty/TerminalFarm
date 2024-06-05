@@ -49,8 +49,6 @@ right_hand = None
 
 gift_options = ['Car(200)', 'Taco(10)', 'Double(x2)']
 
-
-
 ### Miscellaneous Functions
 
 def gift_randomizer(gift_options):
@@ -58,6 +56,7 @@ def gift_randomizer(gift_options):
 
 
 def remove_time(type, amount):
+    pass
        
 
 ### Farming:
@@ -68,7 +67,7 @@ def plant_seed(type):
     if type == 'strawberry':
         print(f'Planting {type}...')
         print('Cost is 1 stamina.')
-        global stamina 
+        global stamina
         stamina -= 1
     elif type == 'wheat':
         print(f'Planting {type}...')
