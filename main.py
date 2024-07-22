@@ -101,6 +101,7 @@ def plant():
         print("You've entered something wrong please check your input and try again. (must be a1, a2, b1, or b2)")
 
 def water():
+
     print("Currently watering all plots...")
     global a1_watered
     global a2_watered
@@ -111,6 +112,13 @@ def water():
     a2_watered = True
     b1_watered = True
     b2_watered = True
+
+def harvest_plants():
+    pass
+
+
+def sell_plants():
+    pass
 
 def print_plots():
 
@@ -128,11 +136,9 @@ def end_day():
     current_game_day += 1
 
 
-def main():
-    ans=True
-    while ans:
-        print("Welcome to Terminal Farm.")
-        print(f"""
+# Menu Print Out
+
+menu_printout = f"""
                ======================================
               |   Terminal Farm - Current Day: {current_game_day}     |
                ======================================
@@ -141,34 +147,68 @@ def main():
                     1.Plant seed
                     2.Water Plot
                     3.Print Plots
-                    4.End Day
-                    5.Exit/Quit
-              """)
+                    4.Sell Plants
+                    5.Harvest Plants
+                    6.End Day - Adds +1 to current day
+                    7.Exit/Quit
+              """
+
+
+def main():
+    
+    ans=True
+    
+    while ans:
         
+        print(menu_printout)
+            
         default_sleep_time = 0.5
         
         ans = input("What would you like to do? ")
+
         if ans == "1":
+
             print("\n Planting Seeds...")
             plant()
             time.sleep(default_sleep_time)
+        
         elif ans == "2":
+           
            print("\n \nWatering plants...")
            water()
            time.sleep(default_sleep_time)
+        
         elif ans == "3":
+           
            print("\n Printing Plots...")
            print_plots()
            time.sleep(default_sleep_time)           
+        
         elif ans == "4":
+           
+           print("\nSelling Plants...")
+           sell_plants()
+           time.sleep(default_sleep_time)
+        
+        elif ans == "5":
+           
+           print("\n Harvesting Crops...")
+           harvest_plants()
+           time.sleep(default_sleep_time)
+
+        elif ans == "6":
+           
            print("\n Ending the day...")
            end_day()
            print("The current day is now: ", current_game_day)
            time.sleep(default_sleep_time)
-        elif ans == "5":
+        
+        elif ans == "7":
+           
            print(f'\n Goodbye, {player_name}!\n\n')
            time.sleep(1)
            exit()
+
         elif ans != "":
             print("\n Not Valid Choice Try again")
 
