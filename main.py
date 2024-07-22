@@ -133,10 +133,10 @@ def main():
         if ans == "1":
             print("\n Planting Seeds...")
             plant()
-            time.sleep(1)
+            time.sleep(default_sleep_time)
         elif ans == "2":
            print("\n \nWatering plants")
-           time.sleep(1)
+           time.sleep(default_sleep_time)
         elif ans == "3":
            print("\n Printing Plots...")
            print_plots()
