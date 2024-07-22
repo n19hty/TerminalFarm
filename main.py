@@ -4,6 +4,7 @@
 
 from datetime import datetime 
 import time
+
 #Set up for the game
 player_name = "Player 1"
 
@@ -25,6 +26,7 @@ b1_planted = False
 b1_seed = "none"
 b1_time_planted = "xx:xx:xx"
 b1_day_planted = 0
+
 
 b2_planted = False
 b2_seed = "none"
@@ -98,6 +100,7 @@ def plant():
 def print_plots():
 
     print("This is what the current plots look like: ")
+    print('🌽')
     print("\n")
     print("\n")
     print("A1 Planted:", a1_planted, "A1 Day Planted:", a1_day_planted, "A1 Time Planted:", a1_time_planted, "A1 Seed:", a1_seed)
