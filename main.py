@@ -3,14 +3,12 @@
 # I would like it to be similar to stardew but with typing mechanics.
 
 from datetime import datetime 
-
-print("Welcome to Terminal Farm.")
-
-
+import time
 #Set up for the game
+player_name = "Player 1"
 
 current_game_day = 0
-
+menu_section = "menu_section"
 #Set up the 4 plots 2x2
 
 a1_planted = False
@@ -32,10 +30,6 @@ b2_planted = False
 b2_seed = "none"
 b2_time_planted = "xx:xx:xx"
 b2_day_planted = 0
-
-
-
-
 
 
 def configure_plot():
@@ -104,6 +98,8 @@ def plant():
 def print_plots():
 
     print("This is what the current plots look like: ")
+    print("\n")
+    print("\n")
     print("A1 Planted:", a1_planted, "A1 Day Planted:", a1_day_planted, "A1 Time Planted:", a1_time_planted, "A1 Seed:", a1_seed)
     print("A2 Planted:", a2_planted, "A2 Day Planted:", a2_day_planted, "A2 Time Planted:", a2_time_planted, "A2 Seed:", a2_seed)
     print("B1 Planted:", b1_planted, "B1 Day Planted:", b1_day_planted, "B1 Time Planted:", b1_time_planted, "B1 Seed:", b1_seed)
@@ -115,21 +111,33 @@ def print_plots():
 def main():
     ans=True
     while ans:
-        print("""
-              1.Plant
-              2.Water
-              3.Print Plots
-              4.Exit/Quit
+        print("Welcome to Terminal Farm.")
+        print(f"""
+               =================================
+              |          Terminal Farm          |
+               =================================
+               {player_name}   -   {menu_section}
+                                             
+                    1.Plant
+                    2.Water
+                    3.Print Plots
+                    4.Exit/Quit
               """)
+        
+        default_sleep_time = 5
+        
         ans = input("What would you like to do? ")
         if ans == "1":
             print("\n Planting Seeds...")
             plant()
+            time.sleep(1)
         elif ans == "2":
-           print("\n Student Deleted")
+           print("\n \nWatering plants")
+           time.sleep(1)
         elif ans == "3":
            print("\n Printing Plots...")
            print_plots()
+           time.sleep(default_sleep_time)           
         elif ans == "4":
            print("\n Goodbye")
         elif ans != "":
