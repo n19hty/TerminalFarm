@@ -47,13 +47,26 @@ def plant():
         
     #ask the user which plot they would like to plant
     plant_location = input("Where would you like to plant? Select a1, a2, b1, b2 : ")
-
+    global a1_planted
+    global a1_seed
+    global a1_time_planted
+    global a1_days_planted
+    global a2_planted
+    global a2_seed
+    global a2_time_planted
+    global a2_days_planted
+    global b1_planted
+    global b1_seed
+    global b1_time_planted
+    global b1_days_planted
+    global b2_planted
+    global b2_seed
+    global b2_time_planted
+    global b2_days_planted
 
     # create the if choices here
     if plant_location == "a1":
-        global a1_planted
-        global a1_seed
-        global a1_time_planted
+       
 
 
         print("Great you are planting in " + plant_location)
