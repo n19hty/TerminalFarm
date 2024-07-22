@@ -149,8 +149,10 @@ def main():
            end_day()
            print("The current day is now: ", current_game_day)
            time.sleep(default_sleep_time)
-        elif ans == "4":
-           print("\n Goodbye")
+        elif ans == "5":
+           print(f'\n Goodbye, {player_name}!\n\n')
+           time.sleep(1)
+           exit()
         elif ans != "":
             print("\n Not Valid Choice Try again")
 
