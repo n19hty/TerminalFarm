@@ -5,11 +5,29 @@
 from datetime import datetime 
 import time
 
-#Set up for the game
+##Set up for the game
+
+current_game_day = 1
+menu_section = "  Main Game"
+
+
+## Player Data
 player_name = "Player 1"
 
-current_game_day = 0
-menu_section = "menu_section"
+
+
+## Inventory
+player_coin = 0
+amount_of_corn = 0
+
+
+
+#Plant Data
+
+#corn
+corn_harvest_time = 3
+
+
 #Set up the 4 plots 2x2
 
 a1_planted = False
@@ -40,7 +58,6 @@ b2_day_planted = 0
 
 def configure_plot():
     pass
-
 
 def plant():
 
@@ -113,9 +130,40 @@ def water():
     b1_watered = True
     b2_watered = True
 
-def harvest_plants():
+def reset_plot(plot_id):
     pass
 
+def harvest_plants():
+    #check plot status
+    #check a1 harvest status
+    #global current_game_day
+    global a1_day_planted
+    global amount_of_corn
+    global corn_harvest_time
+    global a1_planted
+    global a1_watered
+
+    a1_harvest_status = current_game_day - a1_day_planted
+
+    if a1_planted == True and a1_watered == True and a1_harvest_status >= corn_harvest_time:
+        print("A1 is ready to be harvested.")
+        print("Harvesting A1...")
+        
+        global a1_seed
+        global a1_time_planted
+        
+        a1_planted = False
+        a1_day_planted = None
+        a1_watered = False
+        a1_seed = None
+        a1_time_planted = None
+
+        amount_of_corn += 1
+
+        time.sleep(1)
+    else:
+        print("This is broken.")
+    pass
 
 def sell_plants():
     pass
@@ -138,20 +186,25 @@ def end_day():
 
 # Menu Print Out
 
-menu_printout = f"""
+def menu_printout():
+    menu_content = f"""
                ======================================
               |   Terminal Farm - Current Day: {current_game_day}     |
                ======================================
-               {player_name}          -        {menu_section}
+               {player_name}                   {menu_section}
+               Coins: {player_coin}
+                  🌽: {amount_of_corn}
+
                                              
                     1.Plant seed
                     2.Water Plot
                     3.Print Plots
-                    4.Sell Plants
-                    5.Harvest Plants
+                    4.Harvest Plants
+                    5.Sell Plants
                     6.End Day - Adds +1 to current day
                     7.Exit/Quit
               """
+    print(menu_content)
 
 
 def main():
@@ -159,8 +212,8 @@ def main():
     ans=True
     
     while ans:
-        
-        print(menu_printout)
+        menu_printout()
+        #print(menu_printout)
             
         default_sleep_time = 0.5
         
@@ -168,44 +221,44 @@ def main():
 
         if ans == "1":
 
-            print("\n Planting Seeds...")
+            print("\nPlanting Seeds...")
             plant()
             time.sleep(default_sleep_time)
         
         elif ans == "2":
            
-           print("\n \nWatering plants...")
+           print("\nWatering plants...")
            water()
            time.sleep(default_sleep_time)
         
         elif ans == "3":
            
-           print("\n Printing Plots...")
+           print("\nPrinting Plots...")
            print_plots()
            time.sleep(default_sleep_time)           
         
         elif ans == "4":
            
-           print("\nSelling Plants...")
-           sell_plants()
+           print("\nTrying to Harvesting Crops...")
+           harvest_plants()
            time.sleep(default_sleep_time)
         
         elif ans == "5":
            
-           print("\n Harvesting Crops...")
-           harvest_plants()
+           print("\nSelling Plants...")
+           sell_plants()
            time.sleep(default_sleep_time)
 
         elif ans == "6":
            
-           print("\n Ending the day...")
+           print("\nEnding the day...")
            end_day()
            print("The current day is now: ", current_game_day)
            time.sleep(default_sleep_time)
         
         elif ans == "7":
            
-           print(f'\n Goodbye, {player_name}!\n\n')
+           print(f'\nGoodbye, {player_name}!\n\n')
            time.sleep(1)
            exit()
 
