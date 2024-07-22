@@ -14,22 +14,26 @@ menu_section = "menu_section"
 
 a1_planted = False
 a1_seed = "none"
+a1_watered = False
 a1_time_planted = "xx:xx:xx"
 a1_day_planted = 0
 
 a2_planted = False
 a2_seed = "none"
+a2_watered = False
 a2_time_planted = "xx:xx:xx"
 a2_day_planted = 0
 
 b1_planted = False
 b1_seed = "none"
+b1_watered = False
 b1_time_planted = "xx:xx:xx"
 b1_day_planted = 0
 
 
 b2_planted = False
 b2_seed = "none"
+b2_watered = False
 b2_time_planted = "xx:xx:xx"
 b2_day_planted = 0
 
@@ -96,6 +100,17 @@ def plant():
     else:
         print("You've entered something wrong please check your input and try again. (must be a1, a2, b1, or b2)")
 
+def water():
+    print("Currently watering all plots...")
+    global a1_watered
+    global a2_watered
+    global b1_watered
+    global b2_watered
+
+    a1_watered = True
+    a2_watered = True
+    b1_watered = True
+    b2_watered = True
 
 def print_plots():
 
@@ -103,10 +118,10 @@ def print_plots():
     print('🌽')
     print("\n")
     print("\n")
-    print("A1 Planted:", a1_planted, "A1 Day Planted:", a1_day_planted, "A1 Time Planted:", a1_time_planted, "A1 Seed:", a1_seed)
-    print("A2 Planted:", a2_planted, "A2 Day Planted:", a2_day_planted, "A2 Time Planted:", a2_time_planted, "A2 Seed:", a2_seed)
-    print("B1 Planted:", b1_planted, "B1 Day Planted:", b1_day_planted, "B1 Time Planted:", b1_time_planted, "B1 Seed:", b1_seed)
-    print("B2 Planted:", b2_planted, "B2 Day Planted:", b2_day_planted, "B2 Time Planted:", b2_time_planted, "B2 Seed:", b2_seed)
+    print("A1 Planted:", a1_planted, "A1 Day Planted:", a1_day_planted, "A1 Watered:", a1_watered, "A1 Time Planted:", a1_time_planted, "A1 Seed:", a1_seed)
+    print("A2 Planted:", a2_planted, "A2 Day Planted:", a2_day_planted, "A2 Watered:", a2_watered, "A2 Time Planted:", a2_time_planted, "A2 Seed:", a2_seed)
+    print("B1 Planted:", b1_planted, "B1 Day Planted:", b1_day_planted, "B1 Watered:", b1_watered, "B1 Time Planted:", b1_time_planted, "B1 Seed:", b1_seed)
+    print("B2 Planted:", b2_planted, "B2 Day Planted:", b2_day_planted, "B2 Watered:", b2_watered, "B2 Time Planted:", b2_time_planted, "B2 Seed:", b2_seed)
 
 def end_day():
     global current_game_day
@@ -123,8 +138,8 @@ def main():
                ======================================
                {player_name}          -        {menu_section}
                                              
-                    1.Plant
-                    2.Water
+                    1.Plant seed
+                    2.Water Plot
                     3.Print Plots
                     4.End Day
                     5.Exit/Quit
@@ -138,14 +153,15 @@ def main():
             plant()
             time.sleep(default_sleep_time)
         elif ans == "2":
-           print("\n \nWatering plants")
+           print("\n \nWatering plants...")
+           water()
            time.sleep(default_sleep_time)
         elif ans == "3":
            print("\n Printing Plots...")
            print_plots()
            time.sleep(default_sleep_time)           
         elif ans == "4":
-           print("\n Ending the day ...")
+           print("\n Ending the day...")
            end_day()
            print("The current day is now: ", current_game_day)
            time.sleep(default_sleep_time)
