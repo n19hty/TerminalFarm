@@ -21,5 +21,3 @@ The idea is to mimic a stardew like simulation but through a Terminal instead of
 - [ ] Update sell function
 - [ ] Add Inventory system for corn and future crops
 - [ ] Add Currency system for holding coin
-- [ ] 
-
