@@ -105,7 +105,9 @@ def print_plots():
     print("B1 Planted:", b1_planted, "B1 Day Planted:", b1_day_planted, "B1 Time Planted:", b1_time_planted, "B1 Seed:", b1_seed)
     print("B2 Planted:", b2_planted, "B2 Day Planted:", b2_day_planted, "B2 Time Planted:", b2_time_planted, "B2 Seed:", b2_seed)
 
-
+def end_day():
+    global current_game_day
+    current_game_day += 1
 
 
 def main():
@@ -113,15 +115,16 @@ def main():
     while ans:
         print("Welcome to Terminal Farm.")
         print(f"""
-               =================================
-              |          Terminal Farm          |
-               =================================
+               ======================================
+              |   Terminal Farm - Current Day: {current_game_day}     |
+               ======================================
                {player_name}   -   {menu_section}
                                              
                     1.Plant
                     2.Water
                     3.Print Plots
-                    4.Exit/Quit
+                    4.End Day
+                    5.Exit/Quit
               """)
         
         default_sleep_time = 5
@@ -138,6 +141,11 @@ def main():
            print("\n Printing Plots...")
            print_plots()
            time.sleep(default_sleep_time)           
+        elif ans == "4":
+           print("\n Ending the day ...")
+           end_day()
+           print("The current day is now: ", current_game_day)
+           time.sleep(default_sleep_time)
         elif ans == "4":
            print("\n Goodbye")
         elif ans != "":
