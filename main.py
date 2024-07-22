@@ -183,7 +183,6 @@ def end_day():
     global current_game_day
     current_game_day += 1
 
-
 # Menu Print Out
 
 def menu_printout():
@@ -205,7 +204,6 @@ def menu_printout():
                     7.Exit/Quit
               """
     print(menu_content)
-
 
 def main():
     
@@ -264,8 +262,5 @@ def main():
 
         elif ans != "":
             print("\n Not Valid Choice Try again")
-
-    plant()
-
 
 main()
