@@ -118,7 +118,7 @@ def main():
                ======================================
               |   Terminal Farm - Current Day: {current_game_day}     |
                ======================================
-               {player_name}   -   {menu_section}
+               {player_name}          -        {menu_section}
                                              
                     1.Plant
                     2.Water
@@ -127,7 +127,7 @@ def main():
                     5.Exit/Quit
               """)
         
-        default_sleep_time = 5
+        default_sleep_time = 0.5
         
         ans = input("What would you like to do? ")
         if ans == "1":
