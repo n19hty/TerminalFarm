@@ -205,15 +205,57 @@ def sell_plants():
     pass
 
 def print_plots():
+    clear_screen()
+    
+    not_watered_icon = "🌵"
+    watered_icon = "💧"
+    dead_plant = "☠️"
+    time_icon = "⏱️"
+    day_icon = "🗓️"
+    green_check_icon = "✅"
 
-    print("This is what the current plots look like: ")
-    print('🌽')
-    print("\n")
-    print("\n")
-    print("A1 Planted:", a1_planted, "A1 Day Planted:", a1_day_planted, "A1 Watered:", a1_watered, "A1 Time Planted:", a1_time_planted, "A1 Seed:", a1_seed)
-    print("A2 Planted:", a2_planted, "A2 Day Planted:", a2_day_planted, "A2 Watered:", a2_watered, "A2 Time Planted:", a2_time_planted, "A2 Seed:", a2_seed)
-    print("B1 Planted:", b1_planted, "B1 Day Planted:", b1_day_planted, "B1 Watered:", b1_watered, "B1 Time Planted:", b1_time_planted, "B1 Seed:", b1_seed)
-    print("B2 Planted:", b2_planted, "B2 Day Planted:", b2_day_planted, "B2 Watered:", b2_watered, "B2 Time Planted:", b2_time_planted, "B2 Seed:", b2_seed)
+
+
+    layout_printout = f"""
+               ======================================
+              |   Terminal Farm - Current Day: {current_game_day}     |
+               ======================================
+               {player_name}                   {menu_section}
+               Coins: {player_coin}
+                  🌽: {amount_of_corn}
+
+                    #############################
+                    #  A1 | {day_icon}:{a1_day_planted}  #  B1 | {day_icon}:{b1_day_planted}  #
+                    #             #             #
+                    #  {watered_icon}:{green_check_icon}      #  {watered_icon}:{green_check_icon}      #
+                    #  {watered_icon}:{green_check_icon}      #  {watered_icon}:{green_check_icon}      #
+                    #  {watered_icon}:{green_check_icon}      #  {watered_icon}:{green_check_icon}      #
+                    #             #             #
+                    #############################
+                    #  A2 | {day_icon}:{a2_day_planted}  #  B2 | {day_icon}:{b2_day_planted}  #
+                    #             #             #
+                    #  {watered_icon}:{green_check_icon}      #  {watered_icon}:{green_check_icon}      #
+                    #  {watered_icon}:{green_check_icon}      #  {watered_icon}:{green_check_icon}      #
+                    #  {watered_icon}:{green_check_icon}      #  {watered_icon}:{green_check_icon}      #
+                    #             #             #
+                    #############################
+                              
+                """
+    
+    print("This is a test to printing out the plots.")
+    print(layout_printout)
+
+    time.sleep(10)
+
+    
+    # print("This is what the current plots look like: ")
+    # print('🌽')
+    # print("\n")
+    # print("\n")
+    # print("A1 Planted:", a1_planted, "A1 Day Planted:", a1_day_planted, "A1 Watered:", a1_watered, "A1 Time Planted:", a1_time_planted, "A1 Seed:", a1_seed)
+    # print("A2 Planted:", a2_planted, "A2 Day Planted:", a2_day_planted, "A2 Watered:", a2_watered, "A2 Time Planted:", a2_time_planted, "A2 Seed:", a2_seed)
+    # print("B1 Planted:", b1_planted, "B1 Day Planted:", b1_day_planted, "B1 Watered:", b1_watered, "B1 Time Planted:", b1_time_planted, "B1 Seed:", b1_seed)
+    # print("B2 Planted:", b2_planted, "B2 Day Planted:", b2_day_planted, "B2 Watered:", b2_watered, "B2 Time Planted:", b2_time_planted, "B2 Seed:", b2_seed)
 
 def end_day():
     global current_game_day
@@ -297,8 +339,5 @@ def main():
 
         elif ans != "":
             print("\n Not Valid Choice Try again")
-
-
-# plant_menu_printout_plot()
 
 main()
