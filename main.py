@@ -4,6 +4,10 @@
 
 from datetime import datetime 
 import time
+import os
+
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 ##Set up for the game
 
@@ -59,11 +63,43 @@ b2_day_planted = 0
 def configure_plot():
     pass
 
-def plant():
+def plant_menu_printout_plot():
+    clear_screen()
+    menu_content = f"""
+               ======================================
+              |   Terminal Farm - Current Day: {current_game_day}     |
+               ======================================
+               {player_name}                   {menu_section}
+               Coins: {player_coin}
+                  🌽: {amount_of_corn}
 
-        
+                                             
+                    1. Plot A1
+                    2. Plot A2
+                    3. Plot B1
+                    4. Plot B2
+                """
+    
+    user_input = int(input(menu_content))
+    if user_input == 1:
+        return int(user_input)
+    elif user_input == 2:
+        return int(user_input)
+    elif user_input == 3:
+        return int(user_input)
+    elif user_input == 4:
+        return int(user_input)
+    else:
+        return "Broken"
+
+def plant():
+     
     #ask the user which plot they would like to plant
-    plant_location = input("Where would you like to plant? Select a1, a2, b1, b2 : ")
+    # plant_location = input("Where would you like to plant? Select a1, a2, b1, b2 : ")
+    plant_location = plant_menu_printout_plot()
+    print(plant_location)
+    print(type(plant_location))
+        
     global a1_planted
     global a1_seed
     global a1_time_planted
@@ -82,32 +118,32 @@ def plant():
     global b2_day_planted
 
     # create the if choices here
-    if plant_location == "a1":
-        print("Great you are planting in " + plant_location)
+    if plant_location == 1:
+        print("Great you are planting in " + str(plant_location))
         now = datetime.now().strftime("%H:%M:%S")
         a1_planted = True
         a1_seed = "corn"
         a1_time_planted = now
         a1_day_planted = current_game_day
         
-    elif plant_location == "a2":
-        print("Great you are planting in " + plant_location)
+    elif plant_location == 2:
+        print("Great you are planting in " + str(plant_location))
         now = datetime.now().strftime("%H:%M:%S")
         a2_planted = True
         a2_seed = "corn"
         a2_time_planted = now
         a2_day_planted = current_game_day
 
-    elif plant_location == "b1":
-        print("Great you are planting in " + plant_location)
+    elif plant_location == 3:
+        print("Great you are planting in " + str(plant_location))
         now = datetime.now().strftime("%H:%M:%S")
         b1_planted = True
         b1_seed = "corn"
         b1_time_planted = now
         b1_day_planted = current_game_day
     
-    elif plant_location == "b2":
-        print("Great you are planting in " + plant_location)
+    elif plant_location == 4:
+        print("Great you are planting in " + str(plant_location))
         now = datetime.now().strftime("%H:%M:%S")
         b2_planted = True
         b2_seed = "corn"
@@ -183,8 +219,6 @@ def end_day():
     global current_game_day
     current_game_day += 1
 
-# Menu Print Out
-
 def menu_printout():
     menu_content = f"""
                ======================================
@@ -206,6 +240,7 @@ def menu_printout():
     print(menu_content)
 
 def main():
+    clear_screen()
     
     ans=True
     
@@ -262,5 +297,8 @@ def main():
 
         elif ans != "":
             print("\n Not Valid Choice Try again")
+
+
+# plant_menu_printout_plot()
 
 main()
