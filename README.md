@@ -17,7 +17,7 @@
 - **Tool Management:** Players can upgrade their farming tools (e.g., watering can, hoe) to increase efficiency and unlock advanced farming techniques. ⚒️
 - **Weather Effects:** Introduce a weather system where rain can boost crop growth and storms can damage crops, adding a layer of strategy to farming. ☔🌦️
 
-### 3. **Animal Husbandry** 🐄
+### 3. **Animals** 🐄
 - **Various Animals:** Players can raise animals like chickens, cows, and sheep. Each animal produces different resources (e.g., eggs, milk, wool) and has unique care requirements. 🐔🐑
 - **Animal Care System:** Players must feed and care for their animals daily to ensure their health and productivity. Neglecting animals can lead to decreased output or illness. 🍏🧑‍🌾
 - **Breeding Mechanics:** Allow players to breed animals, adding a new layer of depth to animal husbandry. 🐾❤️
