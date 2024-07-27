@@ -215,6 +215,7 @@ def print_plots():
     green_check_icon = "✅"
     red_cross_mark = "❌"
     prohibit_emoji = "🚫"
+    corn_icon = "🌽"
 
     if a1_watered == True:
         a1_watered_status = watered_icon
@@ -236,6 +237,32 @@ def print_plots():
     else: 
         b2_watered_status = not_watered_icon
 
+    if a1_seed == "corn":
+        a1_seed_status = corn_icon
+    else:
+        a1_seed_status = prohibit_emoji
+
+    if a2_seed == "corn":
+        a2_seed_status = corn_icon
+    else:
+        a2_seed_status = prohibit_emoji
+    
+    if b1_seed == "corn":
+        b1_seed_status = corn_icon
+    else:
+        b1_seed_status = prohibit_emoji
+    
+    if b2_seed == "corn":
+        b2_seed_status = corn_icon
+    else:
+        b2_seed_status = prohibit_emoji
+
+    a1_time_left = 0
+    a2_time_left = 0
+    b1_time_left = 0
+    b2_time_left = 0
+
+
 
 
     layout_printout = f"""
@@ -250,15 +277,15 @@ def print_plots():
               #    A1 | {day_icon}:{a1_day_planted}      #    B1 | {day_icon}:{b1_day_planted}     #
               #                   #                  #
               # {watered_icon}:{a1_watered_status}             # {watered_icon}:{b1_watered_status}            #
-              # {watered_icon}:{prohibit_emoji}             # {watered_icon}:{prohibit_emoji}            #
-              # Type:{prohibit_emoji}           # Type:{prohibit_emoji}          #
+              # {time_icon} left: {a1_time_left}        # {time_icon} left: {b1_time_left}       #
+              # type:{a1_seed_status}           # type:{b1_seed_status}          #
               #                   #                  #
               ########################################
               #    A2 | {day_icon}:{a2_day_planted}      #    B2 | {day_icon}:{b2_day_planted}     #
               #                   #                  #
               # {watered_icon}:{a2_watered_status}             # {watered_icon}:{b2_watered_status}            #
-              # {watered_icon}:{prohibit_emoji}             # {watered_icon}:{prohibit_emoji}            #
-              # Type:{prohibit_emoji}           # Type:{prohibit_emoji}          #
+              # {time_icon} left: {a2_time_left}        # {time_icon} left: {b2_time_left}       #
+              # type:{a2_seed_status}           # type:{b2_seed_status}          #
               #                   #                  #
               ########################################
                               
