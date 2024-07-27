@@ -213,36 +213,37 @@ def print_plots():
     time_icon = "⏱️"
     day_icon = "🗓️"
     green_check_icon = "✅"
+    red_cross_mark = "❌"
+    prohibit_emoji = "🚫"
 
 
 
     layout_printout = f"""
-               ======================================
-              |   Terminal Farm - Current Day: {current_game_day}     |
-               ======================================
+              #======================================#
+              #   Terminal Farm - Current Day: {current_game_day}     #
+              #======================================#
                {player_name}                   {menu_section}
                Coins: {player_coin}
                   🌽: {amount_of_corn}
 
-                    #############################
-                    #  A1 | {day_icon}:{a1_day_planted}  #  B1 | {day_icon}:{b1_day_planted}  #
-                    #             #             #
-                    #  {watered_icon}:{green_check_icon}      #  {watered_icon}:{green_check_icon}      #
-                    #  {watered_icon}:{green_check_icon}      #  {watered_icon}:{green_check_icon}      #
-                    #  {watered_icon}:{green_check_icon}      #  {watered_icon}:{green_check_icon}      #
-                    #             #             #
-                    #############################
-                    #  A2 | {day_icon}:{a2_day_planted}  #  B2 | {day_icon}:{b2_day_planted}  #
-                    #             #             #
-                    #  {watered_icon}:{green_check_icon}      #  {watered_icon}:{green_check_icon}      #
-                    #  {watered_icon}:{green_check_icon}      #  {watered_icon}:{green_check_icon}      #
-                    #  {watered_icon}:{green_check_icon}      #  {watered_icon}:{green_check_icon}      #
-                    #             #             #
-                    #############################
+              ########################################
+              #    A1 | {day_icon}:{a1_day_planted}      #    B1 | {day_icon}:{b1_day_planted}     #
+              #                   #                  #
+              # {watered_icon}:{green_check_icon}             # {watered_icon}:{green_check_icon}            #
+              # {watered_icon}:{prohibit_emoji}             # {watered_icon}:{prohibit_emoji}            #
+              # Type:{prohibit_emoji}           # Type:{prohibit_emoji}          #
+              #                   #                  #
+              ########################################
+              #    A2 | {day_icon}:{a2_day_planted}      #    B2 | {day_icon}:{b2_day_planted}     #
+              #                   #                  #
+              # {watered_icon}:{green_check_icon}             # {watered_icon}:{green_check_icon}            #
+              # {watered_icon}:{prohibit_emoji}             # {watered_icon}:{prohibit_emoji}            #
+              # Type:{prohibit_emoji}           # Type:{prohibit_emoji}          #
+              #                   #                  #
+              ########################################
                               
                 """
     
-    print("This is a test to printing out the plots.")
     print(layout_printout)
 
     time.sleep(10)
@@ -282,11 +283,12 @@ def menu_printout():
     print(menu_content)
 
 def main():
-    clear_screen()
+    
     
     ans=True
     
     while ans:
+        clear_screen()
         menu_printout()
         #print(menu_printout)
             
