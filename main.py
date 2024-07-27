@@ -216,6 +216,26 @@ def print_plots():
     red_cross_mark = "❌"
     prohibit_emoji = "🚫"
 
+    if a1_watered == True:
+        a1_watered_status = watered_icon
+    else: 
+        a1_watered_status = not_watered_icon
+
+    if a2_watered == True:
+        a2_watered_status = watered_icon
+    else: 
+        a2_watered_status = not_watered_icon
+
+    if b1_watered == True:
+        b1_watered_status = watered_icon
+    else: 
+        b1_watered_status = not_watered_icon
+
+    if b2_watered == True:
+        b2_watered_status = watered_icon
+    else: 
+        b2_watered_status = not_watered_icon
+
 
 
     layout_printout = f"""
@@ -229,14 +249,14 @@ def print_plots():
               ########################################
               #    A1 | {day_icon}:{a1_day_planted}      #    B1 | {day_icon}:{b1_day_planted}     #
               #                   #                  #
-              # {watered_icon}:{green_check_icon}             # {watered_icon}:{green_check_icon}            #
+              # {watered_icon}:{a1_watered_status}             # {watered_icon}:{b1_watered_status}            #
               # {watered_icon}:{prohibit_emoji}             # {watered_icon}:{prohibit_emoji}            #
               # Type:{prohibit_emoji}           # Type:{prohibit_emoji}          #
               #                   #                  #
               ########################################
               #    A2 | {day_icon}:{a2_day_planted}      #    B2 | {day_icon}:{b2_day_planted}     #
               #                   #                  #
-              # {watered_icon}:{green_check_icon}             # {watered_icon}:{green_check_icon}            #
+              # {watered_icon}:{a2_watered_status}             # {watered_icon}:{b2_watered_status}            #
               # {watered_icon}:{prohibit_emoji}             # {watered_icon}:{prohibit_emoji}            #
               # Type:{prohibit_emoji}           # Type:{prohibit_emoji}          #
               #                   #                  #
@@ -246,7 +266,7 @@ def print_plots():
     
     print(layout_printout)
 
-    time.sleep(10)
+    time.sleep(3)
 
     
     # print("This is what the current plots look like: ")
