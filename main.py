@@ -12,25 +12,19 @@ def clear_screen():
 ##Set up for the game
 
 current_game_day = 1
-menu_section = "  Main Game"
-
+menu_section = "Main Game"
 
 ## Player Data
 player_name = "Player 1"
-
-
 
 ## Inventory
 player_coin = 0
 amount_of_corn = 0
 
-
-
 #Plant Data
 
 #corn
 corn_harvest_time = 3
-
 
 #Set up the 4 plots 2x2
 
@@ -52,13 +46,11 @@ b1_watered = False
 b1_time_planted = "xx:xx:xx"
 b1_day_planted = 0
 
-
 b2_planted = False
 b2_seed = "none"
 b2_watered = False
 b2_time_planted = "xx:xx:xx"
 b2_day_planted = 0
-
 
 def configure_plot():
     pass
@@ -95,7 +87,6 @@ def plant_menu_printout_plot():
 def plant():
      
     #ask the user which plot they would like to plant
-    # plant_location = input("Where would you like to plant? Select a1, a2, b1, b2 : ")
     plant_location = plant_menu_printout_plot()
     print(plant_location)
     print(type(plant_location))
@@ -295,16 +286,6 @@ def print_plots():
 
     time.sleep(3)
 
-    
-    # print("This is what the current plots look like: ")
-    # print('🌽')
-    # print("\n")
-    # print("\n")
-    # print("A1 Planted:", a1_planted, "A1 Day Planted:", a1_day_planted, "A1 Watered:", a1_watered, "A1 Time Planted:", a1_time_planted, "A1 Seed:", a1_seed)
-    # print("A2 Planted:", a2_planted, "A2 Day Planted:", a2_day_planted, "A2 Watered:", a2_watered, "A2 Time Planted:", a2_time_planted, "A2 Seed:", a2_seed)
-    # print("B1 Planted:", b1_planted, "B1 Day Planted:", b1_day_planted, "B1 Watered:", b1_watered, "B1 Time Planted:", b1_time_planted, "B1 Seed:", b1_seed)
-    # print("B2 Planted:", b2_planted, "B2 Day Planted:", b2_day_planted, "B2 Watered:", b2_watered, "B2 Time Planted:", b2_time_planted, "B2 Seed:", b2_seed)
-
 def end_day():
     global current_game_day
     current_game_day += 1
@@ -330,8 +311,7 @@ def menu_printout():
     print(menu_content)
 
 def main():
-    
-    
+      
     ans=True
     
     while ans:
