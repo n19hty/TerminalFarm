@@ -1,4 +1,89 @@
 
+## Plots
+
+a1_info = {
+    'plot_id' : 'a1',
+    'seed_type': None,
+    'watered': False,
+    'time_planted': None,
+    'days_until_harvest': None
+    }
+
+a2_info = {
+    'plot_id' : 'a2',
+    'seed_type': None,
+    'watered': False,
+    'time_planted': None,
+    'days_until_harvest': None
+    }
+
+a3_info = {
+    'plot_id' : 'a3',
+    'seed_type': None,
+    'watered': False,
+    'time_planted': None,
+    'days_until_harvest': None
+    }
+
+b1_info = {
+    'plot_id' : 'b1',
+    'seed_type': None,
+    'watered': False,
+    'time_planted': None,
+    'days_until_harvest': None
+    }
+
+b2_info = {
+    'plot_id' : 'b2',
+    'seed_type': None,
+    'watered': False,
+    'time_planted': None,
+    'days_until_harvest': None
+    }
+
+b3_info = {
+    'plot_id' : 'b3',
+    'seed_type': None,
+    'watered': False,
+    'time_planted': None,
+    'days_until_harvest': None
+    }
+
+c1_info = {
+    'plot_id' : 'c1',
+    'seed_type': None,
+    'watered': False,
+    'time_planted': None,
+    'days_until_harvest': None
+    }
+
+c2_info = {
+    'plot_id' : 'c2',
+    'seed_type': None,
+    'watered': False,
+    'time_planted': None,
+    'days_until_harvest': None
+    }
+
+c3_info = {
+    'plot_id' : 'c3',
+    'seed_type': None,
+    'watered': False,
+    'time_planted': None,
+    'days_until_harvest': None
+    }
+
+crop_plots = [
+    a1_info,
+    a2_info,
+    a3_info,
+    b1_info,
+    b2_info,
+    b3_info,
+    c1_info,
+    c2_info,
+    c3_info
+    ]
 
 
 def load_croptypes_from_file(filename):
@@ -16,10 +101,22 @@ def plant_crops():
     for crop in crop_types:
         print(crop)
     
-    user_input= input('\nWhat type of crop do you want to plant?')
-
-    return user_input
+    user_input = input('\nWhat type of crop do you want to plant?')
     
+    if user_input == '':
+        "Nothing entered please make a selection: "
+        return
+    elif user_input == 'corn':
+        a1_info.update({'seed_type': 'corn'})
+    
+    else:
+        print('Broken')
+    
+
+    print(a1_info)
+    
+
+
 
 def water_crops():
     exit()
